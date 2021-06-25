@@ -1,0 +1,166 @@
+﻿@page "/"
+
+<SfSchedule TValue="AppointmentDataModel" @bind-SelectedDate="@CurrentDate" 
+            Height="500px" Width="100%">
+
+    <ScheduleViews>
+        <ScheduleView Option="View.Day"></ScheduleView>
+        <ScheduleView Option="View.Week">
+            <EventTemplate>
+                @{
+                    var Data = (context as AppointmentDataModel);
+                    <div class='template-wrap' style='background:@(Data.SecondaryColor)'>
+                        <div class='subject' style='background:@(Data.PrimaryColor)'>@(Data.Subject)</div>
+                        <div class='time' style='background:@(Data.PrimaryColor)'>Time: @(GetTimeString(Data.StartTime)) - @(GetTimeString(Data.EndTime))</div>
+                        <div class='image'>
+                            <img src="@($"https://ej2.syncfusion.com/react/demos/src/schedule/images/{Data.ImageName}.svg")" alt="@(Data.ImageName)" />
+                        </div>
+                        <div class='footer' style='background:@(Data.PrimaryColor)'></div>
+                    </div>
+                }
+            </EventTemplate>
+        </ScheduleView>
+        <ScheduleView Option="View.Month">
+            <EventTemplate>
+                @{
+                    var Data = (context as AppointmentDataModel);
+                    <div class='month-template-wrap'>@(Data.Subject)
+                    </div>
+                }
+            </EventTemplate>
+        </ScheduleView>
+    </ScheduleViews>
+
+    <ScheduleEventSettings DataSource="@ScheduleData">
+        @*<Template>
+            @{
+                var Data = (context as AppointmentDataModel);
+                <div class='template-wrap' style='background:@(Data.SecondaryColor)'>
+                    <div class='subject' style='background:@(Data.PrimaryColor)'>@(Data.Subject)</div>
+                    <div class='time' style='background:@(Data.PrimaryColor)'>Time: @(GetTimeString(Data.StartTime)) - @(GetTimeString(Data.EndTime))</div>
+                    <div class='image'>
+                        <img src="@($"https://ej2.syncfusion.com/react/demos/src/schedule/images/{Data.ImageName}.svg")" alt="@(Data.ImageName)"/>
+                    </div>
+                    <div class='footer' style='background:@(Data.PrimaryColor)'></div>
+                </div>
+            }
+        </Template>*@
+    </ScheduleEventSettings>
+</SfSchedule>
+
+
+@code {
+
+    public static string GetTimeString(DateTime date)
+    {
+        return date.ToUniversalTime().ToString("HH:mm", CultureInfo.InvariantCulture);
+    }
+
+    DateTime CurrentDate = new DateTime(2021, 5, 17);
+
+    public class AppointmentDataModel
+    {
+        public int Id { get; set; }
+
+        public string Subject { get; set; }
+
+        public DateTime StartTime { get; set; }
+
+        public DateTime EndTime { get; set; }
+
+        public string PrimaryColor { get; set; }
+
+        public string SecondaryColor { get; set; }
+
+        public string ImageName { get; set; }
+    }
+
+    List<AppointmentDataModel> ScheduleData = new List<AppointmentDataModel>
+{
+        new AppointmentDataModel
+        {
+            Id = 1,
+            Subject = "Environment Day",
+            StartTime = new DateTime(2021, 5, 17, 9, 0, 0),
+            EndTime = new DateTime(2021, 5, 17, 11, 0, 0),
+            PrimaryColor = "#1aaa55",
+            SecondaryColor = "#47bb76",
+            ImageName = "environment-day"
+
+        },
+        new AppointmentDataModel
+        {
+            Id = 2,
+            Subject = "Health Day",
+            StartTime = new DateTime(2021, 5, 19, 9, 0, 0),
+            EndTime = new DateTime(2021, 5, 19, 11, 0, 0),
+            PrimaryColor = "#357cd2",
+            SecondaryColor = "#5d96db",
+            ImageName = "health-day"
+        },
+        new AppointmentDataModel
+        {
+            Id = 3,
+            Subject = "Tourism Day",
+            StartTime = new DateTime(2021, 5, 21, 9, 0, 0),
+            EndTime = new DateTime(2021, 5, 21, 11, 0, 0),
+            PrimaryColor = "#00bdae",
+            SecondaryColor = "#32cabe",
+            ImageName = "tourism-day"
+        }
+
+    };
+
+}
+
+<style>
+    .e-schedule .month-template-wrap {
+        background: orange;
+        padding: 1px;
+        width: 100%;
+    }
+
+    .e-schedule .e-month-view .e-appointment {
+        border: 0px;
+    }
+    .e-schedule .e-vertical-view .e-content-wrap .e-appointment .e-appointment-details {
+        padding: 0;
+        height: 100%;
+    }
+
+    .e-schedule .e-appointment .template-wrap {
+        height: 100%;
+        white-space: normal;
+    }
+
+    .e-schedule .template-wrap .footer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 30px;
+        width: 100%;
+    }
+
+    .e-schedule .template-wrap .subject {
+        font-weight: 600;
+        font-size: 13px;
+        padding: 2px 2px 2px;
+        height: 20px;
+    }
+
+
+    .e-schedule .template-wrap .time {
+        height: 35px;
+        font-size: 12px;
+        padding: 2px 2px 2px;
+    }
+
+
+    .e-schedule .template-wrap .image {
+        height: 100%;
+        width: 90%;
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+</style>
+
