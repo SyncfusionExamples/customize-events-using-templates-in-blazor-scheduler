@@ -2,7 +2,7 @@
 
 ## Repository Description
 
-A quick start Blazor project that helps you to learn how to change the events appearance using templates in the Blazor Scheduler. In this video, you will learn how to customize scheduler appointments generically for all views. You will also learn how to set different appointment customizations for each view and how to customize events with complex designs. This sample demonstrates advanced templating techniques for creating visually rich and interactive scheduler event displays.
+A quick start Blazor project that helps you to learn how to change the events appearance using templates in the [Blazor Scheduler](https://www.syncfusion.com/blazor-components/blazor-scheduler). In this video, you will learn how to customize scheduler appointments generically for all views. You will also learn how to set different appointment customizations for each view and how to customize events with complex designs. This sample demonstrates advanced templating techniques for creating visually rich and interactive scheduler event displays.
 
 ## Features
 
