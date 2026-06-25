@@ -1,8 +1,6 @@
 # Customize Events Using Templates in Blazor Scheduler
 
-## Repository Description
-
-A quick start Blazor project that helps you to learn how to change the events appearance using templates in the [Blazor Scheduler](https://www.syncfusion.com/blazor-components/blazor-scheduler). In this video, you will learn how to customize scheduler appointments generically for all views. You will also learn how to set different appointment customizations for each view and how to customize events with complex designs. This sample demonstrates advanced templating techniques for creating visually rich and interactive scheduler event displays.
+A quick start Blazor project that helps you learn how to change the event appearance using templates in the [Blazor Scheduler](https://www.syncfusion.com/blazor-components/blazor-scheduler). It demonstrates how to customize scheduler appointments generically across all views, as well as how to apply different customizations for each view. This sample also showcases advanced templating techniques for creating visually rich and interactive scheduler event displays, including complex event designs.
 
 ## Features
 
@@ -16,14 +14,13 @@ A quick start Blazor project that helps you to learn how to change the events ap
 
 * Visual Studio 2022
 * .NET 6.0 or later
-* Basic knowledge of Blazor and C#
 
 ## How to run the project
 
-* Checkout this project to a location in your disk.
-* Open the solution file using the Visual Studio 2022.
-* Restore the NuGet packages by rebuilding the solution.
-* Run the project.
+1. Checkout this project to your local machine
+2. Open the solution file using Visual Studio 2022
+3. Build the solution to restore the required NuGet packages
+4. Press `F5` to start the application
 
 ## Documentation
 
