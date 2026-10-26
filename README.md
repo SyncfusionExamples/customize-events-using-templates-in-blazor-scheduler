@@ -12,13 +12,13 @@ A quick start Blazor project that helps you learn how to change the event appear
 
 ## Prerequisites
 
-* Visual Studio 2022
-* .NET 6.0 or later
+* Visual Studio 2026 (or VS Code with C# Dev Kit)
+* .NET 10.0 SDK or later
 
 ## How to run the project
 
 1. Checkout this project to your local machine
-2. Open the solution file using Visual Studio 2022
+2. Open the solution file using Visual Studio
 3. Build the solution to restore the required NuGet packages
 4. Press `F5` to start the application
 
